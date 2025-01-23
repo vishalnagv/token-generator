@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Home = (props) => {
   const { token, setToken, goTo, cvv, setCvv } = props;
-  const [gateway, setGateway] = useState("");
+  const [gateway, setGateway] = useState("heartland");
 
   console.log(cvv);
 
@@ -21,7 +21,7 @@ const Home = (props) => {
       </select>
       {gateway === "heartland" && (
         <div>
-          <p>Enter token</p>
+          <p>Enter public key</p>
           <textarea
             value={token}
             onChange={(e) => setToken(e.target.value)}

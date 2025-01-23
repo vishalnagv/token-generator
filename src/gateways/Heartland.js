@@ -93,7 +93,7 @@ const Heartland = (props) => {
             "border-radius": "20px",
             color: "#ffffff",
             border: "0px solid transparent",
-            width: "35%",
+            width: "100px",
             height: "38px",
           },
           "#heartland-field[name=submit]:focus": {
