@@ -7,10 +7,10 @@ import CardConnect from "./gateways/CardConnect";
 
 function App() {
   const [token, setToken] = useState("");
-  const [cvv, setCvv] = useState(false)
+  const [cvv, setCvv] = useState(false);
   const navigate = useNavigate();
   const onCancel = () => navigate("/");
-  const goTo = e => navigate(e)
+  const goTo = (e) => navigate(e);
   return (
     <div className="App">
       <header className="App-header">
@@ -21,14 +21,32 @@ function App() {
               <Home
                 token={token}
                 setToken={(e) => setToken(e)}
-                goTo={e => goTo(e)}
+                goTo={(e) => goTo(e)}
                 cvv={cvv}
-                setCvv={e => setCvv(e)}
+                setCvv={(e) => setCvv(e)}
               />
             }
           />
-          <Route path="/heartland" element={<Heartland publicKey={token} onCancel={onCancel}/>} />
-          <Route path="/cardconnect" element={<CardConnect cvv={cvv} onCancel={onCancel}/>} />
+          <Route
+            path="/heartland"
+            element={<Heartland publicKey={token} onCancel={onCancel} />}
+          />
+          <Route
+            path="/cardconnect"
+            element={<CardConnect cvv={cvv} onCancel={onCancel} />}
+          />
+          <Route
+            path="*"
+            element={
+              <Home
+                token={token}
+                setToken={(e) => setToken(e)}
+                goTo={(e) => goTo(e)}
+                cvv={cvv}
+                setCvv={(e) => setCvv(e)}
+              />
+            }
+          />
         </Routes>
       </header>
     </div>
