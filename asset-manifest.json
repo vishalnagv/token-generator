@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/token-generator/static/css/main.26cbe9c8.css",
+    "main.css": "/token-generator/static/css/main.ba3828a3.css",
     "main.js": "/token-generator/static/js/main.f9b67866.js",
     "static/js/453.20de0258.chunk.js": "/token-generator/static/js/453.20de0258.chunk.js",
     "index.html": "/token-generator/index.html",
-    "main.26cbe9c8.css.map": "/token-generator/static/css/main.26cbe9c8.css.map",
+    "main.ba3828a3.css.map": "/token-generator/static/css/main.ba3828a3.css.map",
     "main.f9b67866.js.map": "/token-generator/static/js/main.f9b67866.js.map",
     "453.20de0258.chunk.js.map": "/token-generator/static/js/453.20de0258.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26cbe9c8.css",
+    "static/css/main.ba3828a3.css",
     "static/js/main.f9b67866.js"
   ]
 }
