@@ -1,22 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Heartland from "./gateways/Heartland";
+import Home from "./pages/Home";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import CardConnect from "./gateways/CardConnect";
 
 function App() {
+  const [token, setToken] = useState("");
+  const [cvv, setCvv] = useState(false)
+  const navigate = useNavigate();
+  const onCancel = () => navigate("/");
+  const goTo = e => navigate(e)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                token={token}
+                setToken={(e) => setToken(e)}
+                goTo={e => goTo(e)}
+                cvv={cvv}
+                setCvv={e => setCvv(e)}
+              />
+            }
+          />
+          <Route path="/heartland" element={<Heartland publicKey={token} onCancel={onCancel}/>} />
+          <Route path="/cardconnect" element={<CardConnect cvv={cvv} onCancel={onCancel}/>} />
+        </Routes>
       </header>
     </div>
   );
